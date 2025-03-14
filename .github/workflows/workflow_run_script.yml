@@ -19,9 +19,6 @@ jobs:
         with:
           python-version: '3.8'
 
-      - name: List files
-        run: ls -la  # Выводим список файлов в текущей директории
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -29,3 +26,6 @@ jobs:
 
       - name: Run script
         run: python rag_db_create.py
+
+      - name: List files
+        run: ls -la  # Проверяем наличие файла docs_db_index
