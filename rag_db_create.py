@@ -7,7 +7,7 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 # place your VseGPT key here
-os.environ["OPENAI_API_KEY"] = "your_vsegpt_key"
+os.environ["OPENAI_API_KEY"] = "sk-or-vv-a8d6e009e2bbe09474b0679fbba83b015ff1c4f255ed76f33b48ccb1632bdc32"
 
 def create_search_db(file_text,
                         knowledge_base_link,
@@ -33,7 +33,7 @@ def create_search_db(file_text,
 
 if __name__ == "__main__":
     # Read text from file
-    with open("sun.txt", "r", encoding="utf-8") as file:
+    with open("merged_RAG.txt", "r", encoding="utf-8") as file:
         file_text = file.read()
 
     # Link to the knowledge base, can be a URL or some identifier string
