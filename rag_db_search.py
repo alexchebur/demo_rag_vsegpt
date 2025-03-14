@@ -6,7 +6,7 @@ from langchain.vectorstores import FAISS
 from langchain.embeddings.openai import OpenAIEmbeddings
 
 # place your VseGPT key here
-os.environ["OPENAI_API_KEY"] = "your_vsegpt_key"
+os.environ["OPENAI_API_KEY"] = "sk-or-vv-a8d6e009e2bbe09474b0679fbba83b015ff1c4f255ed76f33b48ccb1632bdc32"
 
 embedding_model = OpenAIEmbeddings(model="text-embedding-3-small", openai_api_base = "https://api.vsegpt.ru/v1/")
 
@@ -32,6 +32,6 @@ def run_gpt_query(system, user_query, search_db):
 
 if __name__ == "__main__":
     db = FAISS.load_local("docs_db_index", embedding_model)
-    answer = run_gpt_query("Ты - помощник, помогающий отвечать на вопросы","Расстояние от земли до солнца?",db)
+    answer = run_gpt_query("Ты - помощник, помогающий отвечать на вопросы","Какова специфика технологического присоединения в ценовых зонах?",db)
     print("Финальный ответ:", answer)
 
