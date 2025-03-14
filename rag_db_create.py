@@ -10,7 +10,6 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 os.environ["OPENAI_API_KEY"] = "sk-or-vv-a8d6e009e2bbe09474b0679fbba83b015ff1c4f255ed76f33b48ccb1632bdc32"
 db_index_path = os.path.join(os.path.expanduser("~"), "docs_db_index")
 def create_search_db(file_text,
-def create_search_db(file_text,
                         knowledge_base_link,
                         chunk_size=1024,
                         chunk_overlap=200):
