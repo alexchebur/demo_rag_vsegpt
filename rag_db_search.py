@@ -31,7 +31,7 @@ def run_gpt_query(system, user_query, search_db):
     return answer
 
 if __name__ == "__main__":
-    db = FAISS.load_local("docs_db_index", embedding_model)
+    db = FAISS.load_local("/home/runner/docs_db_index", embedding_model)
     answer = run_gpt_query("Ты - помощник, помогающий отвечать на вопросы","Какова специфика технологического присоединения в ценовых зонах?",db)
     print("Финальный ответ:", answer)
 
