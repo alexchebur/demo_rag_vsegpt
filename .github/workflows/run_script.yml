@@ -1,0 +1,28 @@
+name: Run Python Script
+
+on:
+  push:
+    branches:
+      - main  # Укажите вашу основную ветку, если она отличается
+  workflow_dispatch:  # Позволяет запускать workflow вручную
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest  # Используем последнюю версию Ubuntu
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2  # Клонируем репозиторий
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'  # Укажите нужную версию Python
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # Убедитесь, что у вас есть requirements.txt
+
+      - name: Run script
+        run: python your_script.py  # Замените на имя вашего скрипта
