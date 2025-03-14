@@ -8,7 +8,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 # place your VseGPT key here
 os.environ["OPENAI_API_KEY"] = "sk-or-vv-a8d6e009e2bbe09474b0679fbba83b015ff1c4f255ed76f33b48ccb1632bdc32"
-
+db_index_path = os.path.join(os.getcwd(), "docs_db_index")
 def create_search_db(file_text,
                         knowledge_base_link,
                         chunk_size=1024,
@@ -26,7 +26,8 @@ def create_search_db(file_text,
     if len(source_chunks) > 0:
         embedding_model = OpenAIEmbeddings(model="text-embedding-3-small", openai_api_base = "https://api.vsegpt.ru/v1/")
         db = FAISS.from_documents(source_chunks, embedding_model)
-        db.save_local("docs_db_index")
+        db.save_local(db_index_path)
+        print(f"Docs.db search index created at: {db_index_path}")
         print("Docs.db search index created!")
 
     # return db
