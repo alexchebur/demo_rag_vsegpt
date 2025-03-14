@@ -25,7 +25,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run script
-        run: python rag_db_search.py
+        run: python rag_db_create.py
 # убрать после обработки данных в индекс
       - name: List files
         run: ls -la  # Проверяем наличие файла docs_db_index
