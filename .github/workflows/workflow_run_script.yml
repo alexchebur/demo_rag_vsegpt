@@ -25,4 +25,4 @@ jobs:
           pip install -r requirements.txt  # Убедитесь, что у вас есть requirements.txt
 
       - name: Run script
-        run: python rag_db_create.py.py  # Замените на имя вашего скрипта
+        run: python rag_db_create.py  # Замените на имя вашего скрипта
