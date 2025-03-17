@@ -24,7 +24,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run script
+      #- name: Run script
         run: python rag_db_search.py
 # убрать после обработки данных в индекс
       #- name: List files
